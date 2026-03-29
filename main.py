@@ -58,7 +58,7 @@ def on_response(response: Response):
     
     content = response.body()
     img = Image.open(BytesIO(content))
-    if img.size == (64, 64):
+    if img.size == (64, 64) or img.size == (48, 48):
         save_image(content)
 
 def scrape_images():
