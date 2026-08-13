@@ -2,28 +2,30 @@
 
 What it does:
 
-* Downloads Tumblr profile pictures using the public API.
+- Downloads Tumblr profile pictures using the public API.
+- You can let it run for as long as you want (likes, posts, whatever the script supports); it will keep fetching until you're satisfied (or until your API keys run out).
+- It's easy to modify if you want to do something else with the images besides downloading them.
 
-* You can let it run for as long as you want (likes, posts, whatever the script supports) and it will keep fetching until you're satisfied (or until your API keys run out).
+Some people will say it's not a scraper because it uses the public API — I say I'm scraping the API.
 
-* It's easy to modify if you want to do something else with the scraped images besides downloading it
-
-some people will say it's not a scraper because it uses the public API, i say i am scraping the API
-
-for real now, i had made one that actually scraped the page with playwright, but it's so much cleaner to just use the public API
+For real: I originally made one that scraped the page with Playwright, but it's much cleaner to just use the public API.
 
 ## API keys
-You need to add your API keys either as environment variables or in a .env file following the [example](.env.example) layout.
 
-After creating an account on tumblr and verifying the email it's easy to create many API keys at https://www.tumblr.com/oauth/apps (most of the field are optional or accept anything you put in, besides the URL ones where it needs to start with "https://". I won't make a step by step tutorial but you can figure it out, it's easy)
+Add your API keys either as environment variables or in a `.env` file following the [example](.env.example) layout.
 
-you can put as many keys as you want but after like 20 it stops making a difference, and each one will give you tens of thousands of images
+After creating an account on Tumblr and verifying your email, it's easy to create API keys at https://www.tumblr.com/oauth/apps (most fields are optional or accept anything you put in).
+
+You can add as many keys as you want, but after about 20 it stops making a difference. Each key lets you fetch tens of thousands of images.
 
 ## Usage
-with this out of the way, just install the requirements and run the file.
 
-when you run the file you will have to input which blog you want to scrape, it's important to notice what you need to insert is the at, not the big name
+With that out of the way, just install the requirements and run the script.
 
+When you run it you'll be prompted for which blog you want to scrape — make sure to enter the blog's "at" (the shortname that appears after the `@`), not the display name.
+
+```text
 <img width="558" height="367" alt="image" src="https://github.com/user-attachments/assets/8bdb3440-23cd-4326-87eb-4540854a8843" />
+```
 
-after that you just watch it work until you are satisfied with the amount of pictures, you could leave it running until you have all the pictures of all the likes of all the posts, but normally that would be way too many. To stop it just use the keyboard interrupt
+After that you just watch it work until you are satisfied with the number of pictures. You could leave it running until you have all the pictures from all the likes and posts, but normally that's overkill.
